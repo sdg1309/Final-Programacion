@@ -1,4 +1,4 @@
-public class juga {
+public class juga  {
     private String nombre;
     private int numCam;
     private int nuGol;
