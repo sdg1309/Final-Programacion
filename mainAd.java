@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class mainAd {
 public static void main(String[] args) {
-        Scanner dt = new Scanner(System.in);
-        ArrayList<escuela> lista = new ArrayList<>();
+    boolean alpha = true;
+    ArrayList<escuela> lista = new ArrayList<>();
+    Scanner dt = new Scanner(System.in);
+   
         casa[] aa = new casa[3];
         casa[] bb = new casa[3];
         casa[] cc = new casa[3];
@@ -15,7 +17,7 @@ public static void main(String[] args) {
 
 
         System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.println("Bien venido al toreno de Quidditch.");
+        System.out.println("Bienvenido al toreno de Quidditch.");
         System.out.println("Si eres un admin pon (1), de otra manera pon (2).");
         int men1 = dt.nextInt();
         int cont = 0;
@@ -56,7 +58,8 @@ public static void main(String[] args) {
                 }
             }
         }
-
+        
+        while(alpha == true){
         if(cont == 1){
             System.out.println("-------------------------------------------------------------------------------------------");
             System.out.println("Bienvenido admin.");
@@ -66,7 +69,7 @@ public static void main(String[] args) {
             System.out.println("3) Agregar casa");
 
             int men3 = dt.nextInt();
-            if(men3==1){
+            if(men3 == 1){
                 System.out.println("A que casa vas a agregar:");
                 System.out.println("1)" + aa[0].getNomcasa());
                 System.out.println("2)" + aa[1].getNomcasa());
@@ -149,7 +152,7 @@ public static void main(String[] args) {
 
                     aa[i] = new casa(nombre, ID, color);
 
-                    System.out.println("¿Qieres salr?");
+                    System.out.println("¿Qieres salir?");
                     System.out.println("1) si, 2) no");
                     int men4 = dt.nextInt();
                     if(men4 == 1){
@@ -164,13 +167,20 @@ public static void main(String[] args) {
                     System.out.println("Casa numero" + (i+1));
                     System.out.println("Dame los datos de la Casa:");
                     System.out.println("Nombre:");
-                    String nombre = dt.nextLine();
+                    String nombre = dt.next();
                     System.out.println("ID:");
                     int ID = dt.nextInt();
                     System.out.println("color:");
-                    String color = dt.nextLine();
+                    String color = dt.next();
 
                     bb[i] = new casa(nombre, ID, color);
+
+                    System.out.println("¿Qieres salr?");
+                    System.out.println("1) si, 2) no");
+                    int men4 = dt.nextInt();
+                    if(men4 == 1){
+                        break;
+                    }
                     }
                 }
 
@@ -180,17 +190,32 @@ public static void main(String[] args) {
                     System.out.println("Casa numero" + (i+1));                        
                     System.out.println("Dame los datos de la Casa:");
                     System.out.println("Nombre:");
-                    String nombre = dt.nextLine();
+                    String nombre = dt.next();
                     System.out.println("ID:");
                     int ID = dt.nextInt();
                     System.out.println("color:");
-                    String color = dt.nextLine();
+                    String color = dt.next();
 
                     cc[i] = new casa(nombre, ID, color);
+
+                    System.out.println("¿Qieres salr?");
+                    System.out.println("1) si, 2) no");
+                    int men4 = dt.nextInt();
+                    if(men4 == 1){
+                        break;
+                    }
                     }
                 }
             }
         }
+
+        System.out.println("¿quieres salir por completo?");
+        System.out.println("1) si, 2) no");
+        int gago = dt.nextInt();
+        if(gago == 1){
+            break;
+        }
+    }
     dt.close();
     } 
 }
